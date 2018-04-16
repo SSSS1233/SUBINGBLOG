@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.UserDao">
+   <select id="selectName" parameterType="string" resultType="string">
+      select user_name from user where user_name=#{user_name}
+   </select>
+   <select id="selectPassByName" parameterType="string" resultType="string">
+      select user_pass from user where user_name=#{user_name}
+   </select>
+   <select id="selectArticleBytime" resultType="po.Article">
+      SELECT *from article ORDER BY article_post_time desc
+   </select>
+</mapper>
