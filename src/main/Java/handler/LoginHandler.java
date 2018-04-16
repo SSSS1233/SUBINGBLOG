@@ -6,8 +6,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import po.Article;
+import po.Comment;
+import po.CommentExpand;
 import po.User;
 import service.ArticleService;
+import service.CommentService;
 import service.UserService;
 
 import java.util.HashMap;
@@ -27,6 +30,8 @@ public class LoginHandler {
     UserService userService;
     @Autowired
     ArticleService articleService;
+    @Autowired
+    CommentService commentService;
     @RequestMapping(value = "login")
     public String  login()
     {
@@ -36,6 +41,7 @@ public class LoginHandler {
     @RequestMapping(value = "logincheck")
     public Map<String,Object> logincheck(Model m, User user)
     {
+        System.out.println("LLLL");
         Map<String,Object> map=new HashMap<String, Object>();
         if(userService.selectName(user.getUser_name())!=null)
         {
@@ -50,11 +56,23 @@ public class LoginHandler {
         }
         return map;
     }
+    /*@ResponseBody
+    @RequestMapping(value = "admin/comment/hide")
+    public Map<String,Object> loginchecks(Model m, User user)
+    {
+        System.out.println("LLLL");
+        Map<String,Object> map=new HashMap<String, Object>();
+        return map;
+    }*/
     @RequestMapping(value = "index")
     public String  index(Model m)
     {
         List<Article> l= articleService.selectArticleBytime();
+        List<CommentExpand> l1=commentService.selectAll();
+        System.out.println(l1.get(0).getArticles());
         m.addAttribute("articleCustomList",l);
+        m.addAttribute("commentListVoList",l1);
+      //  System.out.println(l1);
         return "Admin/index";
     }
 }

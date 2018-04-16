@@ -2,6 +2,27 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="dao.UserDao">
+<mapper namespace="dao.CommentDao">
+    <resultMap id="selectAll" type="po.CommentExpand">
+        <id column="comment_id" property="comment_id"/>
+        <result column="comment_pid" property="comment_pid"/>
+        <result column="comment_pname" property="comment_pname"/>
+        <result column="comment_article_id" property="comment_article_id"/>
+        <result column="comment_author_name" property="comment_author_name"/>
+        <result column="comment_author_email" property="comment_author_email"/>
+        <result column="comment_author_url" property="comment_author_url"/>
+        <result column="comment_content" property="comment_content"/>
+        <result column="comment_ip" property="comment_ip"/>
+        <result column="comment_create_time" property="comment_create_time"/>
+        <result column="comment_role" property="comment_role"/>
+        <result column="comment_status" property="comment_status"/>
+        <association property="articles" javaType="po.Article">
+            <id column="article_id" property="article_id"/>
+            <result column="article_title" property="article_title"/>
+        </association>
 
+    </resultMap>
+  <select id="selectAll" resultMap="selectAll">
+       SELECT comment.*,article.* FROM article,comment WHERE comment.comment_article_id=article.article_id
+  </select>
 </mapper>

@@ -71,13 +71,13 @@ function approveComment(id) {
 
 //屏蔽评论
 function hideComment(id) {
+    alert(":::");
     $.ajax({
-        async: false,
-        type: "POST",
-        url:'/admin/comment/hide/'+id,
-        contentType : "application/x-www-form-urlencoded; charset=utf-8",
+        url: "admin/comment/hide",
+        type: "post",
+        data: id,
         dataType: "text",
-        complete:function () {
+        success: function (data) {
             window.location.reload();
         }
     })

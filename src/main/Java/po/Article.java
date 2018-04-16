@@ -136,4 +136,25 @@ public class Article {
   public void setArticle_order(Long article_order) {
     this.article_order = article_order;
   }
+
+  @Override
+  public String toString() {
+    return "Article{" +
+            "article_id=" + article_id +
+            ", article_user_id=" + article_user_id +
+            ", article_title='" + article_title + '\'' +
+            ", article_content='" + article_content + '\'' +
+            ", article_parent_category_id=" + article_parent_category_id +
+            ", article_child_category_id=" + article_child_category_id +
+            ", article_tag_ids='" + article_tag_ids + '\'' +
+            ", article_view_count=" + article_view_count +
+            ", article_comment_count=" + article_comment_count +
+            ", article_like_count=" + article_like_count +
+            ", article_post_time=" + article_post_time +
+            ", article_update_time=" + article_update_time +
+            ", article_is_comment=" + article_is_comment +
+            ", article_status=" + article_status +
+            ", article_order=" + article_order +
+            '}';
+  }
 }

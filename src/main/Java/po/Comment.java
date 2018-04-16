@@ -118,4 +118,23 @@ public class Comment {
   public void setComment_status(Long comment_status) {
     this.comment_status = comment_status;
   }
+
+  @Override
+  public String toString() {
+    return "Comment{" +
+            "comment_id=" + comment_id +
+            ", comment_pid=" + comment_pid +
+            ", comment_pname='" + comment_pname + '\'' +
+            ", comment_article_id=" + comment_article_id +
+            ", comment_author_name='" + comment_author_name + '\'' +
+            ", comment_author_email='" + comment_author_email + '\'' +
+            ", comment_author_url='" + comment_author_url + '\'' +
+            ", comment_content='" + comment_content + '\'' +
+            ", comment_agent='" + comment_agent + '\'' +
+            ", comment_ip='" + comment_ip + '\'' +
+            ", comment_create_time=" + comment_create_time +
+            ", comment_role=" + comment_role +
+            ", comment_status=" + comment_status +
+            '}';
+  }
 }

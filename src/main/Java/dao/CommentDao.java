@@ -1,5 +1,10 @@
 package dao;
 
+import po.Comment;
+import po.CommentExpand;
+
+import java.util.List;
+
 /**
  * Created by Intellij IDEA.
  *
@@ -8,4 +13,5 @@ package dao;
  * @Comment
  */
 public interface CommentDao {
+  List<CommentExpand> selectAll();
 }
