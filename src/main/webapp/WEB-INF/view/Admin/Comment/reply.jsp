@@ -32,15 +32,15 @@
     </blockquote>
 
     <form class="layui-form"  method="post" id="myForm" action="/admin/comment/replySubmit">
-        <input type="hidden" name="commentPid" value="${commentCustom.commentId}">
-        <input type="hidden" name="commentPname" value="${commentCustom.commentAuthorName}">
-        <input type="hidden" name="commentArticleId" value="${commentCustom.commentArticleId}">
+        <input type="hidden" name="commentPid" value="${commentCustom.comment_id}">
+        <input type="hidden" name="commentPname" value="${commentCustom.comment_author_name}">
+        <input type="hidden" name="commentArticleId" value="${commentCustom.comment_article_id}">
         <input type="hidden" name="commentRole" value="1">
 
         <div class="layui-form-item layui-form-text">
             <label class="layui-form-label">原内容</label>
             <div class="layui-input-block">
-                <textarea  class="layui-textarea" disabled>${commentCustom.commentContent}</textarea>
+                <textarea  class="layui-textarea" disabled>${commentCustom.comment_content}</textarea>
             </div>
         </div>
 

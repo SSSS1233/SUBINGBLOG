@@ -17,4 +17,5 @@ import java.util.List;
 public interface CommentService {
     List<CommentExpand> selectAll();
     void update(Comment comment);
+    Comment selectById(int id);
 }

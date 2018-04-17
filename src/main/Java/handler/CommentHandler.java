@@ -3,6 +3,7 @@ package handler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import po.Comment;
@@ -44,5 +45,11 @@ public class CommentHandler {
         commentService.update(comment);
         Map<String,Object> map=new HashMap<String, Object>();
         return map;
+    }
+    @RequestMapping(value = "admin/comment/reply/{id}")
+    public String reply(@PathVariable("id") Integer id,Model m)
+    {
+       Comment comment= commentService.selectById(id);
+       return "";
     }
 }

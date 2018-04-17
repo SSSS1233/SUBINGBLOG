@@ -267,7 +267,7 @@
                                             <c:choose>
                                                 <c:when test="${c.comment_status==1}">
                                                     <a href="javascript:void(0)" style="color: #FF5722;"
-                                                       onclick="hideComment(${c.comment_id})">屏蔽${c.comment_id}</a>
+                                                       onclick="hideComment(${c.comment_id})">屏蔽</a>
                                                     <input type="text" value="${c.comment_id}" id="${c.comment_id}" style="display: none">
                                                 </c:when>
                                                 <c:otherwise>

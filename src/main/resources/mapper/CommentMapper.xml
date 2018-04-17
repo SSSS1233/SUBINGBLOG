@@ -29,4 +29,7 @@
     <update id="update" parameterType="po.Comment">
         UPDATE comment SET comment_status=#{comment_status} where comment_id=#{comment_id}
     </update>
+    <select id="selectById" parameterType="int" resultType="po.Comment">
+        select *from comment where comment_id=#{id}
+    </select>
 </mapper>

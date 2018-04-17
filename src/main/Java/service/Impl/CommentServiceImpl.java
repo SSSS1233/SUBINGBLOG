@@ -27,4 +27,8 @@ public class CommentServiceImpl implements CommentService {
     public void update(Comment comment) {
         commentDao.update(comment);
     }
+
+    public Comment selectById(int id) {
+        return commentDao.selectById(id);
+    }
 }
