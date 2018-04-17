@@ -1,6 +1,7 @@
 package service;
 
 import org.springframework.stereotype.Service;
+import po.User;
 
 import javax.transaction.Transactional;
 
@@ -15,4 +16,5 @@ import javax.transaction.Transactional;
 public interface UserService {
     String selectName(String user_name);
     String selectPassByName(String user_name);
+    User selectByName(String name);
 }

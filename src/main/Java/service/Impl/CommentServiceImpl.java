@@ -31,4 +31,8 @@ public class CommentServiceImpl implements CommentService {
     public Comment selectById(int id) {
         return commentDao.selectById(id);
     }
+
+    public void insert(Comment comment) {
+         commentDao.insert(comment);
+    }
 }

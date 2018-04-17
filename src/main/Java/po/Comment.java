@@ -1,5 +1,7 @@
 package po;
 
+import java.sql.Date;
+
 public class Comment {
   private Long comment_id;
   private Long comment_pid;
@@ -11,7 +13,7 @@ public class Comment {
   private String comment_content;
   private String comment_agent;
   private String comment_ip;
-  private java.sql.Timestamp comment_create_time;
+  private  java.sql.Date comment_create_time;
   private Long comment_role;
   private Long comment_status;
 
@@ -95,11 +97,11 @@ public class Comment {
     this.comment_ip = comment_ip;
   }
 
-  public java.sql.Timestamp getComment_create_time() {
+  public Date getComment_create_time() {
     return comment_create_time;
   }
 
-  public void setComment_create_time(java.sql.Timestamp comment_create_time) {
+  public void setComment_create_time(Date comment_create_time) {
     this.comment_create_time = comment_create_time;
   }
 

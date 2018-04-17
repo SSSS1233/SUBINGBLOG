@@ -13,6 +13,7 @@ import service.ArticleService;
 import service.CommentService;
 import service.UserService;
 
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -39,7 +40,7 @@ public class LoginHandler {
     }
     @ResponseBody
     @RequestMapping(value = "logincheck")
-    public Map<String,Object> logincheck(Model m, User user)
+    public Map<String,Object> logincheck(Model m, User user, HttpSession session)
     {
         System.out.println("LLLL");
         Map<String,Object> map=new HashMap<String, Object>();
@@ -47,9 +48,14 @@ public class LoginHandler {
         {
             if(userService.selectPassByName(user.getUser_name()).equals(user.getUser_pass()))
             {
+                System.out.println(user.getUser_name()+"ASDFG");
+                user=userService.selectByName(user.getUser_name());
+                session.setAttribute("user",user);
                 map.put("message","ok");
+
             }else {
                 map.put("message","密码错误");
+
             }
         }else{
             map.put("message","用户名不存在");

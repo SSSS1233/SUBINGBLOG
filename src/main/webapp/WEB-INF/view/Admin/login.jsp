@@ -129,6 +129,7 @@
                     // alert(data.message)
                     if(data.message=='ok')
                     {
+
                         $("#message").text("")
                         $("#loginForm").submit();
                     }

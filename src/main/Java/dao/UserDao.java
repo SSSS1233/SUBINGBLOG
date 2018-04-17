@@ -1,5 +1,7 @@
 package dao;
 
+import po.User;
+
 /**
  * Created by Intellij IDEA.
  *
@@ -10,4 +12,5 @@ package dao;
 public interface UserDao {
     String selectName(String user_name);
     String selectPassByName(String user_name);
+    User selectByName(String name);
 }

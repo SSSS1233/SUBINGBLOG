@@ -3,6 +3,7 @@ package service.Impl;
 import dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import po.User;
 import service.UserService;
 
 /**
@@ -22,5 +23,9 @@ public class UserServiceImpl implements UserService {
 
     public String selectPassByName(String user_name) {
         return userDao.selectPassByName(user_name);
+    }
+
+    public User selectByName(String name) {
+        return userDao.selectByName(name);
     }
 }

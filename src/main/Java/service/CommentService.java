@@ -18,4 +18,5 @@ public interface CommentService {
     List<CommentExpand> selectAll();
     void update(Comment comment);
     Comment selectById(int id);
+    void insert(Comment comment);
 }

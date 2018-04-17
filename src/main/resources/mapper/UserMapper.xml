@@ -9,7 +9,7 @@
    <select id="selectPassByName" parameterType="string" resultType="string">
       select user_pass from user where user_name=#{user_name}
    </select>
-   <select id="selectArticleBytime" resultType="po.Article">
-      SELECT *from article ORDER BY article_post_time desc
-   </select>
+  <select id="selectByName" parameterType="string" resultType="po.User">
+     SELECT *FROM user WHERE user_name=#{name}
+  </select>
 </mapper>
