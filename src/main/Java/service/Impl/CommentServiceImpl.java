@@ -23,4 +23,8 @@ public class CommentServiceImpl implements CommentService {
     public List<CommentExpand> selectAll() {
         return commentDao.selectAll();
     }
+
+    public void update(Comment comment) {
+        commentDao.update(comment);
+    }
 }

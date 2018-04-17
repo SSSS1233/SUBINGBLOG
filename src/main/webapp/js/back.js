@@ -56,13 +56,14 @@ function deleteComment(id) {
 
 //批准评论
 function approveComment(id) {
+    //alert(id)
+    var comment={comment_id:id}
     $.ajax({
-        async: false,
-        type: "POST",
-        url:'/admin/comment/approve/'+id,
-        contentType : "application/x-www-form-urlencoded; charset=utf-8",
+        url: "admin/comment/approve/",
+        type: "post",
+        data: comment,
         dataType: "text",
-        complete:function () {
+        success: function (data) {
             window.location.reload();
         }
     })
@@ -71,11 +72,13 @@ function approveComment(id) {
 
 //屏蔽评论
 function hideComment(id) {
-    alert(":::");
+    console.log(id)
+    //alert(":::"+("#te"));
+    var comment={comment_id:id}
     $.ajax({
-        url: "admin/comment/hide",
+        url: "admin/comment/hide/",
         type: "post",
-        data: id,
+        data: comment,
         dataType: "text",
         success: function (data) {
             window.location.reload();

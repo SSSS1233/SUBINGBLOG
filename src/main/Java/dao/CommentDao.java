@@ -14,4 +14,5 @@ import java.util.List;
  */
 public interface CommentDao {
   List<CommentExpand> selectAll();
+  void update(Comment comment);
 }

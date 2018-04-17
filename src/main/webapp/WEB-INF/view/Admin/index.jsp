@@ -267,7 +267,8 @@
                                             <c:choose>
                                                 <c:when test="${c.comment_status==1}">
                                                     <a href="javascript:void(0)" style="color: #FF5722;"
-                                                       onclick="hideComment(${c.comment_id})">屏蔽</a>
+                                                       onclick="hideComment(${c.comment_id})">屏蔽${c.comment_id}</a>
+                                                    <input type="text" value="${c.comment_id}" id="${c.comment_id}" style="display: none">
                                                 </c:when>
                                                 <c:otherwise>
                                                     <a href="" style="color: #009688;"
@@ -344,7 +345,7 @@
             </div>
         </div>
     </div>
-
+    </div>
 </rapid:override>
 <rapid:override name="footer-script">
     <script>
@@ -353,9 +354,9 @@
 </rapid:override>
 <%@ include file="Public/framework.jsp" %>
 <script src="/js/jquery.min.js"></script>
-<script>
-/*function hideComment(id) {
-    alert(":::");
+<%--<script>
+function hideComment(id) {
+    alert(":::"+id);
     $.ajax({
         url: "admin/comment/hide",
         type: "post",
@@ -365,5 +366,5 @@
             window.location.reload();
         }
     })
-}*/
+}--%>
 </script>

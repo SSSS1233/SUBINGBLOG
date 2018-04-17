@@ -16,4 +16,5 @@ import java.util.List;
 @Transactional
 public interface CommentService {
     List<CommentExpand> selectAll();
+    void update(Comment comment);
 }

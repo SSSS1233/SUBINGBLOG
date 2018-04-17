@@ -24,5 +24,9 @@
     </resultMap>
   <select id="selectAll" resultMap="selectAll">
        SELECT comment.*,article.* FROM article,comment WHERE comment.comment_article_id=article.article_id
+       ORDER BY comment_create_time desc
   </select>
+    <update id="update" parameterType="po.Comment">
+        UPDATE comment SET comment_status=#{comment_status} where comment_id=#{comment_id}
+    </update>
 </mapper>
