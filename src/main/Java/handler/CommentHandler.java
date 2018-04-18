@@ -8,12 +8,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import po.Comment;
+import po.CommentExpand;
 import po.User;
 import service.CommentService;
 
 import javax.servlet.http.HttpSession;
+
 import java.sql.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -76,6 +79,9 @@ public class CommentHandler {
         comment.setComment_create_time(time);
         comment.setComment_role(id);
         comment.setComment_status(id);
+        commentService.insert(comment);
+        List<CommentExpand> l1=commentService.selectAll();
+        m.addAttribute("commentListVoList",l);
         return "Admin/Comment/index";
     }
 

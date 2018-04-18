@@ -56,7 +56,7 @@
                     <c:forEach items="${commentListVoList}" var="c">
                         <tr>
                             <td>
-                                <img src="${c.commentCustom.commentAuthorAvatar}" alt="" width="64px">
+                                <img src="https://github.com/SSSS1233/myblog/blob/master/a.jpg?raw=true" alt="" width="64px">
                                 <strong>${c.commentCustom.commentAuthorName}</strong>
                                 <c:if test="${c.commentCustom.commentStatus==0}">
                                     <span class="approve">[待审]</span>
