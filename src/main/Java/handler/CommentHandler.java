@@ -81,7 +81,9 @@ public class CommentHandler {
         comment.setComment_status(id);
         commentService.insert(comment);
         List<CommentExpand> l1=commentService.selectAll();
-        m.addAttribute("commentListVoList",l);
+        List<CommentExpand> l2=commentService.selectByStatus();
+        m.addAttribute("commentListVoList",l1);
+        m.addAttribute("hiddenCommentListVoList",l2);
         return "Admin/Comment/index";
     }
 

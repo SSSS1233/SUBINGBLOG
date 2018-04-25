@@ -91,6 +91,7 @@
     <servlet-name>default</servlet-name>
     <url-pattern>/druid/*</url-pattern>
   </servlet-mapping>
+  <!--druid 配置WebStatFilter 网络统计以及监控 -->
   <filter>
     <filter-name>DruidWebStatFilter</filter-name>
     <filter-class>com.alibaba.druid.support.http.WebStatFilter</filter-class>

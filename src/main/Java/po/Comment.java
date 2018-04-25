@@ -15,7 +15,7 @@ public class Comment {
   private String comment_ip;
   private  java.sql.Date comment_create_time;
   private Long comment_role;
-  private Long comment_status;
+  private Long comment_status;//是否待审
 
   public Long getComment_id() {
     return comment_id;

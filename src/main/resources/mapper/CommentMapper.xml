@@ -2,6 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 一对一 -->
 <mapper namespace="dao.CommentDao">
     <resultMap id="selectAll" type="po.CommentExpand">
         <id column="comment_id" property="comment_id"/>
@@ -20,7 +21,6 @@
             <id column="article_id" property="article_id"/>
             <result column="article_title" property="article_title"/>
         </association>
-
     </resultMap>
   <select id="selectAll" resultMap="selectAll">
        SELECT comment.*,article.* FROM article,comment WHERE comment.comment_article_id=article.article_id
@@ -37,4 +37,8 @@
         #{comment_author_email},#{comment_author_url},#{comment_content},#{comment_agent},#{comment_ip},#{comment_create_time},
         #{comment_role},#{comment_status})
     </insert>
+    <select id="selectByStatus" resultMap="selectAll">
+         SELECT comment.*,article.* FROM article,comment WHERE comment.comment_article_id=article.article_id
+ and comment_status=0 ORDER BY comment_create_time desc
+    </select>
 </mapper>

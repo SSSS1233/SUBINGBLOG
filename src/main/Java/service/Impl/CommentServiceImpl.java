@@ -35,4 +35,8 @@ public class CommentServiceImpl implements CommentService {
     public void insert(Comment comment) {
          commentDao.insert(comment);
     }
+
+    public List<CommentExpand> selectByStatus() {
+        return commentDao.selectByStatus();
+    }
 }
