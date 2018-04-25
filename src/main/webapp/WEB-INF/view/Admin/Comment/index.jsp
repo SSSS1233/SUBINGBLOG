@@ -7,7 +7,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib prefix="rapid" uri="http://www.rapid-framework.org.cn/rapid" %>
-
 <rapid:override name="title">
     - 评论列表
 </rapid:override>
@@ -28,10 +27,11 @@
               <a><cite>评论列表</cite></a>
         </span>
     </blockquote>
+    <div id="flushDIV">
     <div class="layui-tab layui-tab-card">
         <ul class="layui-tab-title">
-            <li class="layui-this">全部评论(${commentListVoList.size()})</li>
-            <li>待审评论(${hiddenCommentListVoList.size()})</li>
+            <li class="layui-this">全部评论(${all})</li>
+            <li>待审评论(${other})</li>
         </ul>
         <div class="layui-tab-content">
             <div class="layui-tab-item layui-show" style="margin-bottom: -10px">
@@ -197,6 +197,12 @@
                         &lt;%&ndash;分页 end&ndash;%&gt;
                     </c:if>
                 </div>--%>
+                <div >
+                <a href="javascript:void(0)" onclick="checkPage(1)">首页</a>
+                <a href="javascript:void(0)" onclick="checkPage(${pageNo-1})">上一页</a>
+                <a href="javascript:void(0)" onclick="checkPage(${pageNo+1})">"下一页</a>
+                <a href="javascript:void(0)" onclick="checkPage(-10)">尾页</a>
+                </div>
             </div>
             <div class="layui-tab-item">
                 <table class="layui-table" lay-even lay-skin="nob">
@@ -275,12 +281,11 @@
             </div>
         </div>
     </div>
-
+    </div>
 
 </rapid:override>
 <rapid:override name="footer-script">
-    <script>
-
+    <script src="/js/MyJS.js">
     </script>
 </rapid:override>
 

@@ -29,7 +29,7 @@
         </span>
     </blockquote>
 
-    <form class="layui-form"  method="post" id="myForm" action="/admin/comment/replySubmit">
+    <form class="layui-form"  method="post" id="myForm" action="/admin/comment/replySubmit/1">
         <input type="hidden" name="commentPid" value="${commentCustom.comment_id}">
         <input type="hidden" name="commentPname" value="${commentCustom.comment_author_name}">
         <input type="hidden" name="commentArticleId" value="${commentCustom.comment_article_id}">

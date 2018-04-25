@@ -220,8 +220,6 @@ function checkUserEmail() {
     return result;
 }
 
-
-
 //添加用户验证和编辑用户验证
 layui.use(['form', 'layedit', 'laydate'], function () {
     var form = layui.form, layer = layui.layer;

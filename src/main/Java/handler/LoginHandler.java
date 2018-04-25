@@ -44,7 +44,8 @@ public class LoginHandler {
     {
         System.out.println("LLLL");
         Map<String,Object> map=new HashMap<String, Object>();
-        if(userService.selectName(user.getUser_name())!=null)
+        String name=userService.selectName(user.getUser_name());
+        if(name!=null&&name.equals(user.getUser_name()))
         {
             if(userService.selectPassByName(user.getUser_name()).equals(user.getUser_pass()))
             {
