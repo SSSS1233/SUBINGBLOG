@@ -1,6 +1,6 @@
 package service;
 
-import po.Article;
+import po.Category;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -9,11 +9,10 @@ import java.util.List;
  * Created by Intellij IDEA.
  *
  * @Author SUBING
- * @Date 2018/4/16 21:40.
+ * @Date 2018/4/26 17:33.
  * @Comment
  */
 @Transactional
-public interface ArticleService {
-    List<Article> selectArticleBytime();
-    List<Article> selectById(int id);
+public interface CategoryService {
+    List<Category> selectAll();
 }

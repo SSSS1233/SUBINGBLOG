@@ -13,4 +13,5 @@ import java.util.List;
  */
 public interface ArticleDao {
     List<Article> selectArticleBytime();
+    List<Article> selectById(int id);
 }

@@ -20,5 +20,5 @@ public interface CommentService {
     Comment selectById(int id);
     void insert(Comment comment);
     List<CommentExpand> selectByStatus();
-
+    List<Comment> selectByArticle(int id);
 }

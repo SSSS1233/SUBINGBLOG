@@ -18,4 +18,5 @@ public interface CommentDao {
   Comment selectById(int id);
   void insert(Comment comment);
   List<CommentExpand> selectByStatus();
+  List<Comment> selectByArticle(int id);
 }

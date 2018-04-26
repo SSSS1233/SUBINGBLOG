@@ -17,10 +17,15 @@ import java.util.List;
  * @Comment
  */
 @Service
-public class ArcticleServiceimpl implements ArticleService{
+public class ArcticleServiceimpl implements ArticleService {
     @Autowired
     ArticleDao articleService;
+
     public List<Article> selectArticleBytime() {
         return articleService.selectArticleBytime();
+    }
+
+    public List<Article> selectById(int id) {
+        return articleService.selectById(id);
     }
 }

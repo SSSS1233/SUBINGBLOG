@@ -68,17 +68,17 @@
                             </li>
 
                             <c:forEach items="${categoryList}" var="category">
-                                <c:if test="${category.categoryPid==0}">
+                                <c:if test="${category.category_pid==0}">
                                     <li>
-                                        <a href="/category/${category.categoryId}">
-                                            <i class="${category.categoryIcon}"></i>
-                                            <span class="font-text">${category.categoryName}&nbsp;</span>
+                                        <a href="/category/${category.category_id}">
+                                            <i class="${category.category_icon}"></i>
+                                            <span class="font-text">${category.category_name}&nbsp;</span>
                                         </a>
                                         <ul class="sub-menu">
                                             <c:forEach items="${categoryList}" var="cate">
-                                                <c:if test="${cate.categoryPid==category.categoryId}">
+                                                <c:if test="${cate.category_pid==category.category_id}">
                                                     <li>
-                                                        <a href="/category/${cate.categoryId}" target="_blank">${cate.categoryName}</a>
+                                                        <a href="/category/${cate.category_id}" target="_blank">${cate.category_name}</a>
                                                     </li>
                                                 </c:if>
                                             </c:forEach>

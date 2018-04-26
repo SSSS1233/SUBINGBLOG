@@ -39,4 +39,8 @@ public class CommentServiceImpl implements CommentService {
     public List<CommentExpand> selectByStatus() {
         return commentDao.selectByStatus();
     }
+
+    public List<Comment> selectByArticle(int id) {
+        return commentDao.selectByArticle(id);
+    }
 }
